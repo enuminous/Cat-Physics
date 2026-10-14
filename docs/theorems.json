@@ -1,0 +1,392 @@
+[
+  {
+    "name": "CatPhysics.foraging_grows_iff",
+    "module": "CatPhysics.Boundaries",
+    "path": "CatPhysics/Boundaries.lean",
+    "statement": "theorem foraging_grows_iff (F a c d s dt : \u211d) (ht : 0 < dt) :\n    F \u2264 foragingStep F a c d s dt \u2194 d * s \u2264 a * c"
+  },
+  {
+    "name": "CatPhysics.balanced_foraging",
+    "module": "CatPhysics.Boundaries",
+    "path": "CatPhysics/Boundaries.lean",
+    "statement": "theorem balanced_foraging (F a c d s dt : \u211d) (h : a * c = d * s) :\n    foragingStep F a c d s dt = F"
+  },
+  {
+    "name": "CatPhysics.couch_increases_iff",
+    "module": "CatPhysics.Boundaries",
+    "path": "CatPhysics/Boundaries.lean",
+    "statement": "theorem couch_increases_iff (S d c : \u211d) : S \u2264 couchStep S d c \u2194 c \u2264 d"
+  },
+  {
+    "name": "CatPhysics.couch_can_decrease",
+    "module": "CatPhysics.Boundaries",
+    "path": "CatPhysics/Boundaries.lean",
+    "statement": "theorem couch_can_decrease : couchStep 10 1 3 < 10"
+  },
+  {
+    "name": "CatPhysics.entropyTrajectory_monotone",
+    "module": "CatPhysics.Boundaries",
+    "path": "CatPhysics/Boundaries.lean",
+    "statement": "theorem entropyTrajectory_monotone (S : \u211d) (d c : \u2115 \u2192 \u211d) (h : \u2200 n, c n \u2264 d n) :\n    Monotone (entropyTrajectory S d c)"
+  },
+  {
+    "name": "CatPhysics.humanServitudeConstant_value",
+    "module": "CatPhysics.Boundaries",
+    "path": "CatPhysics/Boundaries.lean",
+    "statement": "theorem humanServitudeConstant_value : humanServitudeConstant = 1"
+  },
+  {
+    "name": "CatPhysics.box_preferred_to_zero",
+    "module": "CatPhysics.Boundaries",
+    "path": "CatPhysics/Boundaries.lean",
+    "statement": "theorem box_preferred_to_zero (boxPotential : \u211d) (h : boxPotential < 0) :\n    boxPotential < (0 : \u211d)"
+  },
+  {
+    "name": "CatPhysics.sigmoid_pos",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sigmoid_pos (z : \u211d) : 0 < sigmoid z"
+  },
+  {
+    "name": "CatPhysics.sigmoid_lt_one",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sigmoid_lt_one (z : \u211d) : sigmoid z < 1"
+  },
+  {
+    "name": "CatPhysics.sigmoid_zero",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sigmoid_zero : sigmoid 0 = 1 / 2"
+  },
+  {
+    "name": "CatPhysics.sigmoid_strictMono",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sigmoid_strictMono : StrictMono sigmoid"
+  },
+  {
+    "name": "CatPhysics.sigmoid_injective",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sigmoid_injective : Function.Injective sigmoid"
+  },
+  {
+    "name": "CatPhysics.sigmoid_neg",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sigmoid_neg (z : \u211d) : sigmoid (-z) = 1 - sigmoid z"
+  },
+  {
+    "name": "CatPhysics.compliance_bounds",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem compliance_bounds (p : ComplianceParameters) (power yield : \u211d) :\n    0 < compliance p power yield \u2227 compliance p power yield < 1"
+  },
+  {
+    "name": "CatPhysics.compliance_mono_power",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem compliance_mono_power (p : ComplianceParameters) (h : 0 \u2264 p.powerGain)\n    {x y : \u211d} (hxy : x \u2264 y) (yield : \u211d) :\n    compliance p x yield \u2264 compliance p y yield"
+  },
+  {
+    "name": "CatPhysics.compliance_mono_yield",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem compliance_mono_yield (p : ComplianceParameters) (h : 0 \u2264 p.yieldGain)\n    {x y : \u211d} (hxy : x \u2264 y) (power : \u211d) :\n    compliance p power x \u2264 compliance p power y"
+  },
+  {
+    "name": "CatPhysics.zero_powerGain",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem zero_powerGain (p : ComplianceParameters) (h : p.powerGain = 0) (x y z : \u211d) :\n    compliance p x z = compliance p y z"
+  },
+  {
+    "name": "CatPhysics.negative_powerGain_reverses",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem negative_powerGain_reverses {p : ComplianceParameters} (h : p.powerGain < 0)\n    {x y : \u211d} (hxy : x < y) (z : \u211d) : compliance p y z < compliance p x z"
+  },
+  {
+    "name": "CatPhysics.sampledMean_nonneg",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sampledMean_nonneg {n : \u2115} (x : Fin n \u2192 \u211d) (h : \u2200 i, 0 \u2264 x i) :\n    0 \u2264 sampledMean x"
+  },
+  {
+    "name": "CatPhysics.sampledMean_const",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sampledMean_const {n : \u2115} (hn : 0 < n) (c : \u211d) :\n    sampledMean (fun _ : Fin n => c) = c"
+  },
+  {
+    "name": "CatPhysics.sampledMean_le",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sampledMean_le {n : \u2115} (hn : 0 < n) (x : Fin n \u2192 \u211d) (B : \u211d)\n    (h : \u2200 i, x i \u2264 B) : sampledMean x \u2264 B"
+  },
+  {
+    "name": "CatPhysics.sampled_purr_power_bounds",
+    "module": "CatPhysics.Compliance",
+    "path": "CatPhysics/Compliance.lean",
+    "statement": "theorem sampled_purr_power_bounds {n : \u2115} (hn : 0 < n) (a f p : \u211d) (t : Fin n \u2192 \u211d) :\n    0 \u2264 sampledMean (fun i => purrPower a f p (t i)) \u2227\n    sampledMean (fun i => purrPower a f p (t i)) \u2264 a ^ 2"
+  },
+  {
+    "name": "CatPhysics.optimal_exists",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem optimal_exists (score : Action \u2192 \u211d) : \u2203 a, Optimal score a"
+  },
+  {
+    "name": "CatPhysics.optimal_shift_iff",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem optimal_shift_iff (score : Action \u2192 \u211d) (c : \u211d) (a : Action) :\n    Optimal (fun b => score b + c) a \u2194 Optimal score a"
+  },
+  {
+    "name": "CatPhysics.optimal_scale_iff",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem optimal_scale_iff (score : Action \u2192 \u211d) (c : \u211d) (hc : 0 < c) (a : Action) :\n    Optimal (fun b => c * score b) a \u2194 Optimal score a"
+  },
+  {
+    "name": "CatPhysics.constant_score_ties",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem constant_score_ties (c : \u211d) (a : Action) : Optimal (fun _ => c) a"
+  },
+  {
+    "name": "CatPhysics.maximizer_need_not_be_unique",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem maximizer_need_not_be_unique :\n    \u2203 score : Action \u2192 \u211d, Optimal score .meow \u2227 Optimal score .loaf \u2227\n      Action.meow \u2260 Action.loaf"
+  },
+  {
+    "name": "CatPhysics.optimal_scores_equal",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem optimal_scores_equal {score : Action \u2192 \u211d} {a b : Action}\n    (ha : Optimal score a) (hb : Optimal score b) : score a = score b"
+  },
+  {
+    "name": "CatPhysics.compliance_utility_bounded",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem compliance_utility_bounded (v : ActionValues) (hk : 0 \u2264 v.kappa)\n    (hp : \u2200 a, 0 \u2264 v.complyProbability a \u2227 v.complyProbability a \u2264 1) (a : Action) :\n    v.expectedTreats a + v.eta * v.statusChange a \u2264 utility v a \u2227\n    utility v a \u2264 v.expectedTreats a + v.eta * v.statusChange a + v.kappa"
+  },
+  {
+    "name": "CatPhysics.toy_meow_optimal",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem toy_meow_optimal : Optimal toyScore .meow"
+  },
+  {
+    "name": "CatPhysics.toy_meow_unique",
+    "module": "CatPhysics.Decision",
+    "path": "CatPhysics/Decision.lean",
+    "statement": "theorem toy_meow_unique {a : Action} (h : Optimal toyScore a) : a = .meow"
+  },
+  {
+    "name": "CatPhysics.schrodinger_inner_derivative_zero",
+    "module": "CatPhysics.Dynamics",
+    "path": "CatPhysics/Dynamics.lean",
+    "statement": "theorem schrodinger_inner_derivative_zero {n : \u2115}\n    (H : \u211d \u2192 HilbertState n \u2192\u2097[\u2102] HilbertState n)\n    (\u03c8 : \u211d \u2192 HilbertState n) (t : \u211d)\n    (hH : (H t).IsSymmetric)\n    (h\u03c8 : HasDerivAt \u03c8 ((-Complex.I) \u2022 H t (\u03c8 t)) t) :\n    HasDerivAt (fun s => inner \u2102 (\u03c8 s) (\u03c8 s)) 0 t"
+  },
+  {
+    "name": "CatPhysics.schrodinger_inner_conserved",
+    "module": "CatPhysics.Dynamics",
+    "path": "CatPhysics/Dynamics.lean",
+    "statement": "theorem schrodinger_inner_conserved {n : \u2115}\n    (H : \u211d \u2192 HilbertState n \u2192\u2097[\u2102] HilbertState n)\n    (\u03c8 : \u211d \u2192 HilbertState n)\n    (hH : \u2200 t, (H t).IsSymmetric)\n    (h\u03c8 : \u2200 t, HasDerivAt \u03c8 ((-Complex.I) \u2022 H t (\u03c8 t)) t) (s t : \u211d) :\n    inner \u2102 (\u03c8 s) (\u03c8 s) = inner \u2102 (\u03c8 t) (\u03c8 t)"
+  },
+  {
+    "name": "CatPhysics.schrodinger_norm_conserved",
+    "module": "CatPhysics.Dynamics",
+    "path": "CatPhysics/Dynamics.lean",
+    "statement": "theorem schrodinger_norm_conserved {n : \u2115}\n    (H : \u211d \u2192 HilbertState n \u2192\u2097[\u2102] HilbertState n)\n    (\u03c8 : \u211d \u2192 HilbertState n)\n    (hH : \u2200 t, (H t).IsSymmetric)\n    (h\u03c8 : \u2200 t, HasDerivAt \u03c8 ((-Complex.I) \u2022 H t (\u03c8 t)) t) (s t : \u211d) :\n    \u2016\u03c8 s\u2016 = \u2016\u03c8 t\u2016"
+  },
+  {
+    "name": "CatPhysics.schrodinger_normalization_preserved",
+    "module": "CatPhysics.Dynamics",
+    "path": "CatPhysics/Dynamics.lean",
+    "statement": "theorem schrodinger_normalization_preserved {n : \u2115}\n    (H : \u211d \u2192 HilbertState n \u2192\u2097[\u2102] HilbertState n)\n    (\u03c8 : \u211d \u2192 HilbertState n)\n    (hH : \u2200 t, (H t).IsSymmetric)\n    (h\u03c8 : \u2200 t, HasDerivAt \u03c8 ((-Complex.I) \u2022 H t (\u03c8 t)) t)\n    (h0 : \u2016\u03c8 0\u2016 = 1) (t : \u211d) : \u2016\u03c8 t\u2016 = 1"
+  },
+  {
+    "name": "CatPhysics.matrix_schrodinger_norm_conserved",
+    "module": "CatPhysics.Dynamics",
+    "path": "CatPhysics/Dynamics.lean",
+    "statement": "theorem matrix_schrodinger_norm_conserved {n : \u2115}\n    (H : \u211d \u2192 Operator n) (\u03c8 : \u211d \u2192 HilbertState n)\n    (hH : \u2200 t, (H t).IsHermitian)\n    (h\u03c8 : \u2200 t, HasDerivAt \u03c8 ((-Complex.I) \u2022 (H t).toEuclideanLin (\u03c8 t)) t)\n    (s t : \u211d) : \u2016\u03c8 s\u2016 = \u2016\u03c8 t\u2016"
+  },
+  {
+    "name": "CatPhysics.totalHamiltonian_norm_conserved",
+    "module": "CatPhysics.Dynamics",
+    "path": "CatPhysics/Dynamics.lean",
+    "statement": "theorem totalHamiltonian_norm_conserved {n : \u2115}\n    (f : \u211d \u2192 Fields n) (human : \u211d \u2192 Operator n) (gamma : \u211d) (power : \u211d \u2192 \u211d)\n    (\u03c8 : \u211d \u2192 HilbertState n)\n    (hE : \u2200 t, (f t).exploration.IsHermitian) (hF : \u2200 t, (f t).foraging.IsHermitian)\n    (hM : \u2200 t, (f t).tactile.IsHermitian) (hW : \u2200 t, (f t).coherence.IsHermitian)\n    (hH : \u2200 t, (human t).IsHermitian)\n    (h\u03c8 : \u2200 t, HasDerivAt \u03c8 ((-Complex.I) \u2022\n      (totalHamiltonian (f t) (human t) gamma (power t)).toEuclideanLin (\u03c8 t)) t)\n    (s t : \u211d) : \u2016\u03c8 s\u2016 = \u2016\u03c8 t\u2016"
+  },
+  {
+    "name": "CatPhysics.angularFrequency_pos",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem angularFrequency_pos {f : \u211d} (hf : 0 < f) : 0 < angularFrequency f"
+  },
+  {
+    "name": "CatPhysics.purrPower_nonneg",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem purrPower_nonneg (a f p t : \u211d) : 0 \u2264 purrPower a f p t"
+  },
+  {
+    "name": "CatPhysics.purrPower_le_amplitude_sq",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem purrPower_le_amplitude_sq (a f p t : \u211d) : purrPower a f p t \u2264 a ^ 2"
+  },
+  {
+    "name": "CatPhysics.silent_purr",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem silent_purr (f p t : \u211d) : purrPower 0 f p t = 0"
+  },
+  {
+    "name": "CatPhysics.purr_at_origin",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem purr_at_origin (a f : \u211d) : purr a f 0 0 = 0"
+  },
+  {
+    "name": "CatPhysics.purrPower_sign_invariant",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem purrPower_sign_invariant (a f p t : \u211d) :\n    purrPower (-a) f p t = purrPower a f p t"
+  },
+  {
+    "name": "CatPhysics.empty_harmonicStack",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem empty_harmonicStack (a : Fin 0 \u2192 \u2102) (f p : Fin 0 \u2192 \u211d) (t : \u211d) :\n    harmonicStack a f p t = 0"
+  },
+  {
+    "name": "CatPhysics.harmonicStack_add",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem harmonicStack_add {n : \u2115} (a b : Fin n \u2192 \u2102) (f p : Fin n \u2192 \u211d) (t : \u211d) :\n    harmonicStack (a + b) f p t = harmonicStack a f p t + harmonicStack b f p t"
+  },
+  {
+    "name": "CatPhysics.coupling_symmetric",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem coupling_symmetric (l a b p q : \u211d) : coupling l a b p q = coupling l b a q p"
+  },
+  {
+    "name": "CatPhysics.coupling_synchronized",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem coupling_synchronized (l a b p : \u211d) : coupling l a b p p = l * a * b"
+  },
+  {
+    "name": "CatPhysics.coupling_zero_strength",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem coupling_zero_strength (a b p q : \u211d) : coupling 0 a b p q = 0"
+  },
+  {
+    "name": "CatPhysics.coupling_le_synchronized",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem coupling_le_synchronized (l a b p q : \u211d) (h : 0 \u2264 l * a * b) :\n    coupling l a b p q \u2264 coupling l a b p p"
+  },
+  {
+    "name": "CatPhysics.opposite_phase_coupling",
+    "module": "CatPhysics.Harmonics",
+    "path": "CatPhysics/Harmonics.lean",
+    "statement": "theorem opposite_phase_coupling : coupling 1 1 1 Real.pi 0 = -1"
+  },
+  {
+    "name": "CatPhysics.statePower_nonneg",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem statePower_nonneg {n : \u2115} (\u03c8 : State n) : 0 \u2264 statePower \u03c8"
+  },
+  {
+    "name": "CatPhysics.zero_state_not_normalized",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem zero_state_not_normalized {n : \u2115} : \u00ac Normalized (0 : State n)"
+  },
+  {
+    "name": "CatPhysics.statePower_smul",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem statePower_smul {n : \u2115} (c : \u2102) (\u03c8 : State n) :\n    statePower (c \u2022 \u03c8) = Complex.normSq c * statePower \u03c8"
+  },
+  {
+    "name": "CatPhysics.unit_phase_preserves_normalization",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem unit_phase_preserves_normalization {n : \u2115} (c : \u2102) (hc : Complex.normSq c = 1)\n    (\u03c8 : State n) (h\u03c8 : Normalized \u03c8) : Normalized (c \u2022 \u03c8)"
+  },
+  {
+    "name": "CatPhysics.unit_phase_preserves_mode_power",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem unit_phase_preserves_mode_power {n : \u2115} (c : \u2102) (hc : Complex.normSq c = 1)\n    (\u03c8 : State n) (i : Fin n) : Complex.normSq ((c \u2022 \u03c8) i) = Complex.normSq (\u03c8 i)"
+  },
+  {
+    "name": "CatPhysics.expectation_real",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem expectation_real {n : \u2115} (A : Operator n) (hA : A.IsHermitian) (\u03c8 : State n) :\n    (rawExpectation A \u03c8).im = 0"
+  },
+  {
+    "name": "CatPhysics.expectation_add",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem expectation_add {n : \u2115} (A B : Operator n) (\u03c8 : State n) :\n    expectation (A + B) \u03c8 = expectation A \u03c8 + expectation B \u03c8"
+  },
+  {
+    "name": "CatPhysics.expectation_real_smul",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem expectation_real_smul {n : \u2115} (r : \u211d) (A : Operator n) (\u03c8 : State n) :\n    expectation (r \u2022 A) \u03c8 = r * expectation A \u03c8"
+  },
+  {
+    "name": "CatPhysics.hermitian_real_smul",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem hermitian_real_smul {n : \u2115} (r : \u211d) (A : Operator n) (hA : A.IsHermitian) :\n    (r \u2022 A).IsHermitian"
+  },
+  {
+    "name": "CatPhysics.mastery_yield",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem mastery_yield {n : \u2115} (s : Signals n) (b : SignalWeights) (\u03c8 : State n) :\n    expectation (mastery s b) \u03c8 =\n      b.blink * expectation s.blink \u03c8 + b.headbutt * expectation s.headbutt \u03c8 +\n      b.loaf * expectation s.loaf \u03c8 + b.meow * expectation s.meow \u03c8"
+  },
+  {
+    "name": "CatPhysics.mastery_hermitian",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem mastery_hermitian {n : \u2115} (s : Signals n) (b : SignalWeights)\n    (hB : s.blink.IsHermitian) (hN : s.headbutt.IsHermitian)\n    (hL : s.loaf.IsHermitian) (hM : s.meow.IsHermitian) :\n    (mastery s b).IsHermitian"
+  },
+  {
+    "name": "CatPhysics.totalHamiltonian_hermitian",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem totalHamiltonian_hermitian {n : \u2115} (f : Fields n) (human : Operator n)\n    (gamma power : \u211d) (hE : f.exploration.IsHermitian) (hF : f.foraging.IsHermitian)\n    (hM : f.tactile.IsHermitian) (hW : f.coherence.IsHermitian) (hH : human.IsHermitian) :\n    (totalHamiltonian f human gamma power).IsHermitian"
+  },
+  {
+    "name": "CatPhysics.hermitian_powerRate_zero",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem hermitian_powerRate_zero {n : \u2115} (H : Operator n) (hH : H.IsHermitian)\n    (\u03c8 : State n) : powerRate H \u03c8 = 0"
+  },
+  {
+    "name": "CatPhysics.euler_step_power",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem euler_step_power (dt : \u211d) :\n    Complex.normSq (1 - Complex.I * (dt : \u2102)) = 1 + dt ^ 2"
+  },
+  {
+    "name": "CatPhysics.euler_step_grows",
+    "module": "CatPhysics.Operators",
+    "path": "CatPhysics/Operators.lean",
+    "statement": "theorem euler_step_grows {dt : \u211d} (h : dt \u2260 0) :\n    1 < Complex.normSq (1 - Complex.I * (dt : \u2102))"
+  }
+]

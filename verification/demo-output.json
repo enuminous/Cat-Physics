@@ -1,0 +1,118 @@
+{
+  "status": "SYNTHETIC DEMONSTRATION; NOT FITTED OR EMPIRICALLY VALIDATED",
+  "modes": [
+    "mode0",
+    "mode1"
+  ],
+  "steps": 400,
+  "dt": 0.005,
+  "integrator": "midpoint-frozen real-symmetric 2x2 exponential",
+  "coefficients": {
+    "intercept": -1,
+    "powerGain": 0.8,
+    "yieldGain": 1.2,
+    "gamma": 0.4
+  },
+  "max_norm_power_error": 3.597122599785507e-14,
+  "samples": [
+    {
+      "time": 0.2,
+      "mode0_probability": 0.9987086922574742,
+      "mode1_probability": 0.0012913077425311928,
+      "mean_purr_power": 0.4999999999999999,
+      "mean_yield": 0.20099862429903076,
+      "predicted_compliance": 0.41124968340182266,
+      "state_power": 1.0000000000000053
+    },
+    {
+      "time": 0.4,
+      "mode0_probability": 0.9948908657786324,
+      "mode1_probability": 0.005109134221375771,
+      "mean_purr_power": 0.4999999999999999,
+      "mean_yield": 0.20679514074593625,
+      "predicted_compliance": 0.41293488352809304,
+      "state_power": 1.0000000000000082
+    },
+    {
+      "time": 0.6,
+      "mode0_probability": 0.9887123738652877,
+      "mode1_probability": 0.011287626134724145,
+      "mean_purr_power": 0.4999999999999993,
+      "mean_yield": 0.21806426467166448,
+      "predicted_compliance": 0.4162169264177414,
+      "state_power": 1.0000000000000118
+    },
+    {
+      "time": 0.8,
+      "mode0_probability": 0.9804416214042795,
+      "mode1_probability": 0.01955837859573531,
+      "mean_purr_power": 0.5000000000000002,
+      "mean_yield": 0.23431644490830922,
+      "predicted_compliance": 0.4209632849153655,
+      "state_power": 1.0000000000000149
+    },
+    {
+      "time": 1.0,
+      "mode0_probability": 0.9704379048727303,
+      "mode1_probability": 0.02956209512728814,
+      "mean_purr_power": 0.49999999999999967,
+      "mean_yield": 0.25484565729034353,
+      "predicted_compliance": 0.4269795681960795,
+      "state_power": 1.0000000000000184
+    },
+    {
+      "time": 1.2,
+      "mode0_probability": 0.9591358038478719,
+      "mode1_probability": 0.04086419615214964,
+      "mean_purr_power": 0.5000000000000014,
+      "mean_yield": 0.2787600756239953,
+      "predicted_compliance": 0.43401514029306437,
+      "state_power": 1.0000000000000215
+    },
+    {
+      "time": 1.4000000000000001,
+      "mode0_probability": 0.9470263020825677,
+      "mode1_probability": 0.05297369791745784,
+      "mean_purr_power": 0.5000000000000009,
+      "mean_yield": 0.3050208142334825,
+      "predicted_compliance": 0.4417716414971431,
+      "state_power": 1.0000000000000255
+    },
+    {
+      "time": 1.6,
+      "mode0_probability": 0.9346354582812068,
+      "mode1_probability": 0.0653645417188229,
+      "mean_purr_power": 0.5000000000000009,
+      "mean_yield": 0.3324870590376844,
+      "predicted_compliance": 0.44991465513340984,
+      "state_power": 1.0000000000000298
+    },
+    {
+      "time": 1.8,
+      "mode0_probability": 0.9225015531561381,
+      "mode1_probability": 0.07749844684389426,
+      "mean_purr_power": 0.5000000000000009,
+      "mean_yield": 0.3599656265814774,
+      "predicted_compliance": 0.45808826639893124,
+      "state_power": 1.0000000000000324
+    },
+    {
+      "time": 2.0,
+      "mode0_probability": 0.9111517055379313,
+      "mode1_probability": 0.08884829446210459,
+      "mean_purr_power": 0.5000000000000009,
+      "mean_yield": 0.3862627980875967,
+      "predicted_compliance": 0.46593170852226834,
+      "state_power": 1.000000000000036
+    }
+  ],
+  "final_utility": {
+    "scratch": 0.33426400010205204,
+    "meow": 1.1710265150921613,
+    "stare": 0.7575273596491618,
+    "loaf": 0.5155134533530851,
+    "knockGlass": 0.050239487512828224
+  },
+  "selected_action": "meow",
+  "tie_rule": "first in ACTIONS"
+}

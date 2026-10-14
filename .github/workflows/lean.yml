@@ -1,0 +1,46 @@
+name: Lean proofs and reproducibility
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean toolchain via elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan/toolchains
+            ~/.cache/mathlib
+            .lake/packages
+          key: cat-physics-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}
+      - name: Fetch dependencies and compiled Mathlib cache
+        run: |
+          lake update
+          lake exe cache get Mathlib.Analysis.Matrix.Hermitian Mathlib.Analysis.InnerProductSpace.Calculus Mathlib.Analysis.Calculus.MeanValue Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic Mathlib.Data.Finset.Max Mathlib.Tactic.Linarith Mathlib.Tactic.Ring Mathlib.Tactic.Positivity Mathlib.Tactic.NormNum Mathlib.Tactic.FieldSimp Mathlib.Tactic.FinCases
+      - name: Build every public proof
+        run: lake build
+      - name: Reject proof escapes and audit theorem dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/audit.py --generate
+          lake env lean CatPhysics/Audit.lean | tee verification/ci-axioms.log
+          python3 tools/audit.py --check-log verification/ci-axioms.log
+      - name: Check numerical illustration
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 tools/demo.py --output verification/ci-demo-output.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-records
+          path: verification/

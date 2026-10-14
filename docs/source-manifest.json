@@ -1,0 +1,66 @@
+{
+  "title": "Cat Physics",
+  "author": "Matthew Chenoweth Wright",
+  "publication_date": "2025-08-16",
+  "export_date": "2025-08-19",
+  "canonical_url": "https://medium.com/@enuminous/cat-physics-b960c0f6f243",
+  "source": "User-supplied article text and seven PNG attachments; not a fresh scrape of Medium.",
+  "images": [
+    {
+      "panel": 1,
+      "original_filename": "1_PtodfO6yBAubLKIBQuiNyw.png",
+      "path": "images/01-state.png",
+      "sha256": "558f517cad7bab3568a0543423e19c3d86def74f3c57045145748b06134197e6",
+      "role": "equation panel",
+      "original_url": "https://cdn-images-1.medium.com/max/800/1*PtodfO6yBAubLKIBQuiNyw.png"
+    },
+    {
+      "panel": 2,
+      "original_filename": "1_NydquFpCd_1QR0VJwG0FGw.png",
+      "path": "images/02-fields.png",
+      "sha256": "c5f3eebdc17355a39ff59cc28e0f5e6ceadd6a0cee6d1520999329110e524eba",
+      "role": "equation panel",
+      "original_url": "https://cdn-images-1.medium.com/max/800/1*NydquFpCd_1QR0VJwG0FGw.png"
+    },
+    {
+      "panel": 3,
+      "original_filename": "1_lIzYUrhOcWj6SMn2htj8DQ.png",
+      "path": "images/03-compliance.png",
+      "sha256": "9b6837e04bb6078e148f26d6d0dc49fee98416bc1d98289a676ba378059a37d0",
+      "role": "equation panel",
+      "original_url": "https://cdn-images-1.medium.com/max/800/1*lIzYUrhOcWj6SMn2htj8DQ.png"
+    },
+    {
+      "panel": 4,
+      "original_filename": "1_lwz3PeJl8ezJzXOPagAGgQ.png",
+      "path": "images/04-harmonics.png",
+      "sha256": "f076cd51a907db472ff2025a0cb4aba5427161243c6336bebb4040452eabd87a",
+      "role": "equation panel",
+      "original_url": "https://cdn-images-1.medium.com/max/800/1*lwz3PeJl8ezJzXOPagAGgQ.png"
+    },
+    {
+      "panel": 5,
+      "original_filename": "1_yZpirrqPteDj69iP8Vnrmg.png",
+      "path": "images/05-control.png",
+      "sha256": "460f1a6eb0c3addde9cb05a6025033a7ee2888bd8d956b5a7f5907237caa5999",
+      "role": "equation panel",
+      "original_url": "https://cdn-images-1.medium.com/max/800/1*yZpirrqPteDj69iP8Vnrmg.png"
+    },
+    {
+      "panel": 6,
+      "original_filename": "1_rC_54Iaf_8v_z5Uy2hr1Pg.png",
+      "path": "images/06-engineering.png",
+      "sha256": "c52f391d176154c8c3a5b9454d90c08d86a888f5c102700ed5f514103399a67d",
+      "role": "equation panel",
+      "original_url": "https://cdn-images-1.medium.com/max/800/1*rC_54Iaf_8v_z5Uy2hr1Pg.png"
+    },
+    {
+      "panel": 7,
+      "original_filename": "1_2voTrJhrSDBc_uFdFHaxSw.png",
+      "path": "images/07-cat-professor.png",
+      "sha256": "88c2bb4040ef5dadf6cf6fc69af3838fdb918c5ac95674bc1898dae7fc2f854d",
+      "role": "illustration",
+      "original_url": "https://cdn-images-1.medium.com/max/800/1*2voTrJhrSDBc_uFdFHaxSw.png"
+    }
+  ]
+}

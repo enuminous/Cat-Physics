@@ -1,0 +1,7 @@
+CHECK CatPhysics.Harmonics: exit 0
+CHECK CatPhysics.Operators: exit 0
+CHECK CatPhysics.Compliance: exit 0
+CHECK CatPhysics.Decision: exit 0
+CHECK CatPhysics.Boundaries: exit 0
+CHECK CatPhysics.Dynamics: exit 0
+CHECK CatPhysics: exit 0

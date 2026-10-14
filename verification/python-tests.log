@@ -1,0 +1,11 @@
+test_eigenstate_and_zero_hamiltonian (test_demo.DemoChecks.test_eigenstate_and_zero_hamiltonian) ... ok
+test_euler_counterexample (test_demo.DemoChecks.test_euler_counterexample) ... ok
+test_logistic_and_gain_direction (test_demo.DemoChecks.test_logistic_and_gain_direction) ... ok
+test_purr_power_and_sampling (test_demo.DemoChecks.test_purr_power_and_sampling) ... ok
+test_ties_and_negative_scores (test_demo.DemoChecks.test_ties_and_negative_scores) ... ok
+test_unitary_evolution (test_demo.DemoChecks.test_unitary_evolution) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.009s
+
+OK
